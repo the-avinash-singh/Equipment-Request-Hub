@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_number">
+    <sys_number action="INSERT_OR_UPDATE">
+        <category display_value="" name="x_2228927_equipm_0_request">x_2228927_equipm_0_request</category>
+        <maximum_digits>7</maximum_digits>
+        <number>1001</number>
+        <prefix>EQR</prefix>
+        <sys_class_name>sys_number</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-29 05:53:07</sys_created_on>
+        <sys_id>2b165f982f5cd7108d012cba6fa4e38f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>EQR</sys_name>
+        <sys_package display_value="Equipment Request Hub" source="x_2228927_equipm_0">fae54b182fd8d7108d012cba6fa4e3f3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</sys_scope>
+        <sys_update_name>sys_number_2b165f982f5cd7108d012cba6fa4e38f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-29 05:53:07</sys_updated_on>
+    </sys_number>
+</record_update>

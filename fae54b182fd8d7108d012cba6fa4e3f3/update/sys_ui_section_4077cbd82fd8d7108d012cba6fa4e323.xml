@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="4077cbd82fd8d7108d012cba6fa4e323" sys_domain="global" table="x_2228927_equipm_0_equipment" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sku</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-29 05:07:21</sys_created_on>
+            <sys_id>cdab0b142f1cd7108d012cba6fa4e371</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2228927_equipm_0_equipment" sys_domain="global" view="Default view">4077cbd82fd8d7108d012cba6fa4e323</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-29 05:07:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>name</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-29 05:07:21</sys_created_on>
+            <sys_id>89ab0b142f1cd7108d012cba6fa4e372</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2228927_equipm_0_equipment" sys_domain="global" view="Default view">4077cbd82fd8d7108d012cba6fa4e323</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-29 05:07:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>type</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-29 05:07:21</sys_created_on>
+            <sys_id>45ab0b142f1cd7108d012cba6fa4e373</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2228927_equipm_0_equipment" sys_domain="global" view="Default view">4077cbd82fd8d7108d012cba6fa4e323</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-29 05:07:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>unit_cost</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-29 05:07:21</sys_created_on>
+            <sys_id>01ab0b142f1cd7108d012cba6fa4e374</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2228927_equipm_0_equipment" sys_domain="global" view="Default view">4077cbd82fd8d7108d012cba6fa4e323</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-29 05:07:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>stock_qty</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-29 05:07:21</sys_created_on>
+            <sys_id>c9ab0b142f1cd7108d012cba6fa4e374</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2228927_equipm_0_equipment" sys_domain="global" view="Default view">4077cbd82fd8d7108d012cba6fa4e323</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-29 05:07:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>reorder_level</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-29 05:07:21</sys_created_on>
+            <sys_id>85ab0b142f1cd7108d012cba6fa4e375</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2228927_equipm_0_equipment" sys_domain="global" view="Default view">4077cbd82fd8d7108d012cba6fa4e323</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-29 05:07:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>active</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-29 05:07:21</sys_created_on>
+            <sys_id>41ab0b142f1cd7108d012cba6fa4e376</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2228927_equipm_0_equipment" sys_domain="global" view="Default view">4077cbd82fd8d7108d012cba6fa4e323</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-29 05:07:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_2228927_equipm_0_equipment</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-29 04:48:59</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>4077cbd82fd8d7108d012cba6fa4e323</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_2228927_equipm_0_equipment</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Equipment Request Hub" source="x_2228927_equipm_0">fae54b182fd8d7108d012cba6fa4e3f3</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</sys_scope>
+            <sys_update_name>sys_ui_section_4077cbd82fd8d7108d012cba6fa4e323</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-29 04:48:59</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

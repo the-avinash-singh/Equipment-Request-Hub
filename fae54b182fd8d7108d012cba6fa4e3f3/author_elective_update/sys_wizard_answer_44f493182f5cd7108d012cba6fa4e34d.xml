@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_wizard_answer">
+    <sys_wizard_answer action="DELETE">
+        <active>true</active>
+        <answer>New Equipment Request</answer>
+        <button_label/>
+        <dependent_value/>
+        <element/>
+        <name>Equipment Request</name>
+        <next_question/>
+        <order>100</order>
+        <payload_name/>
+        <question display_value="Task" name="Task">a0f89235086003100a22e9371c04a48a</question>
+        <roles/>
+        <script/>
+        <sys_class_name>sys_wizard_answer</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-29 05:47:58</sys_created_on>
+        <sys_id>44f493182f5cd7108d012cba6fa4e34d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Equipment Request</sys_name>
+        <sys_package display_value="Equipment Request Hub" source="x_2228927_equipm_0">fae54b182fd8d7108d012cba6fa4e3f3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</sys_scope>
+        <sys_update_name>sys_wizard_answer_44f493182f5cd7108d012cba6fa4e34d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-29 05:47:58</sys_updated_on>
+        <table/>
+        <target_url>x_2228927_equipm_0_request.do</target_url>
+        <type>1</type>
+    </sys_wizard_answer>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</application>
+        <file_path/>
+        <instance_id>dedc869fff758b5cc80bf8e4fc4fd977</instance_id>
+        <instance_name>dev424214</instance_name>
+        <name>sys_wizard_answer_44f493182f5cd7108d012cba6fa4e34d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_wizard_answer"><sys_wizard_answer action="INSERT_OR_UPDATE"><active>true</active><answer>New Equipment Request</answer><button_label/><dependent_value/><element/><name>Equipment Request</name><next_question/><order>100</order><payload_name/><question display_value="Task" name="Task">a0f89235086003100a22e9371c04a48a</question><roles/><script/><sys_class_name>sys_wizard_answer</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-29 05:47:58</sys_created_on><sys_id>44f493182f5cd7108d012cba6fa4e34d</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Equipment Request</sys_name><sys_package display_value="Equipment Request Hub" source="x_2228927_equipm_0">fae54b182fd8d7108d012cba6fa4e3f3</sys_package><sys_policy/><sys_scope display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</sys_scope><sys_update_name>sys_wizard_answer_44f493182f5cd7108d012cba6fa4e34d</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-29 05:47:58</sys_updated_on><table/><target_url>x_2228927_equipm_0_request.do</target_url><type>1</type></sys_wizard_answer></record_update>]]></payload>
+        <payload_hash>1260207037</payload_hash>
+        <record_name>Equipment Request</record_name>
+        <reverted_from/>
+        <source>3ee54b182fd8d7108d012cba6fa4e3fc</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-29 05:47:58</sys_created_on>
+        <sys_id>18f493182f5cd7108d012cba6fa4e352</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a186336a280000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-29 05:47:58</sys_updated_on>
+        <type>Answer</type>
+        <update_guid>c4f493181b5cd710f66050a1f3414051</update_guid>
+        <update_guid_history>c4f493181b5cd710f66050a1f3414051:1260207037</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-29 05:51:49</sys_created_on>
+        <sys_db_object display_value="" name="sys_wizard_answer">sys_wizard_answer</sys_db_object>
+        <sys_id>77a52af10c884258972491cb8f8cba04</sys_id>
+        <sys_metadata>44f493182f5cd7108d012cba6fa4e34d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Equipment Request</sys_name>
+        <sys_package display_value="Equipment Request Hub" source="x_2228927_equipm_0">fae54b182fd8d7108d012cba6fa4e3f3</sys_package>
+        <sys_parent display_value="Task">a0f89235086003100a22e9371c04a48a</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</sys_scope>
+        <sys_scope_delete display_value="">1441fa7a63424dc094b22b2017b9f9c9</sys_scope_delete>
+        <sys_update_name>sys_wizard_answer_44f493182f5cd7108d012cba6fa4e34d</sys_update_name>
+        <sys_update_version display_value="sys_wizard_answer_44f493182f5cd7108d012cba6fa4e34d">18f493182f5cd7108d012cba6fa4e352</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-29 05:51:49</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

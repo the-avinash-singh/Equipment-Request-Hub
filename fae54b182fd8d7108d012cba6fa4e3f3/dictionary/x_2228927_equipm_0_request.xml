@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="93165f982f5cd7108d012cba6fa4e363" extends="task" label="Equipment Request" max_length="40" name="x_2228927_equipm_0_request" type="collection">
+        <element default="javascript:gs.getUserID();" dynamic_default_value="bdcb83a85f220100a9ad2572f2b4773d" label="Requested for" max_length="32" name="requested_for" reference="sys_user" type="reference" use_dynamic_default="true"/>
+        <element label="Stock reserved" max_length="255" name="stock_reserved" type="boolean"/>
+        <element label="Delivered on" max_length="40" name="delivered_on" type="glide_date_time"/>
+        <element label="Justification" max_length="4000" name="justification" type="string"/>
+        <element choice="1" label="Approval tier" max_length="40" name="approval_tier" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Manager" sequence="1" value="manager"/>
+                <element inactive_on_update="false" label="Auto" sequence="0" value="auto"/>
+                <element inactive_on_update="false" label="Manager Finance" sequence="2" value="manager_finance"/>
+            </choice>
+        </element>
+        <element default="1" label="Quantity" max_length="255" name="quantity" type="integer"/>
+        <element label="Equipment" mandatory="true" max_length="32" name="equipment" reference="x_2228927_equipm_0_equipment" reference_qual="active=true" reference_qual_condition="active=true" type="reference"/>
+        <element label="Expected delivery" max_length="40" name="delivery_date" type="glide_date"/>
+        <element label="Total cost" max_length="40" name="total_cost" read_only="true" read_only_option="client_script_modifiable" type="currency"/>
+    </element>
+</database>

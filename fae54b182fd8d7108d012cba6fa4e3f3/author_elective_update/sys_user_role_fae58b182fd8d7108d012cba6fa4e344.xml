@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="DELETE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description>Default user role</description>
+        <elevated_privilege>false</elevated_privilege>
+        <federated_id/>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_2228927_equipm_0.user</name>
+        <scoped_admin>false</scoped_admin>
+        <suffix>user</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-29 04:42:21</sys_created_on>
+        <sys_id>fae58b182fd8d7108d012cba6fa4e344</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2228927_equipm_0.user</sys_name>
+        <sys_package display_value="Equipment Request Hub" source="x_2228927_equipm_0">fae54b182fd8d7108d012cba6fa4e3f3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</sys_scope>
+        <sys_update_name>sys_user_role_fae58b182fd8d7108d012cba6fa4e344</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-29 04:42:21</sys_updated_on>
+    </sys_user_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</application>
+        <file_path/>
+        <instance_id>dedc869fff758b5cc80bf8e4fc4fd977</instance_id>
+        <instance_name>dev424214</instance_name>
+        <name>sys_user_role_fae58b182fd8d7108d012cba6fa4e344</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role"><sys_user_role action="INSERT_OR_UPDATE"><assignable_by/><can_delegate>true</can_delegate><description>Default user role</description><elevated_privilege>false</elevated_privilege><federated_id/><grantable>true</grantable><includes_roles/><name>x_2228927_equipm_0.user</name><scoped_admin>false</scoped_admin><suffix>user</suffix><sys_class_name>sys_user_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-29 04:42:21</sys_created_on><sys_id>fae58b182fd8d7108d012cba6fa4e344</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_2228927_equipm_0.user</sys_name><sys_package display_value="Equipment Request Hub" source="x_2228927_equipm_0">fae54b182fd8d7108d012cba6fa4e3f3</sys_package><sys_policy/><sys_scope display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</sys_scope><sys_update_name>sys_user_role_fae58b182fd8d7108d012cba6fa4e344</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-29 04:42:21</sys_updated_on></sys_user_role></record_update>]]></payload>
+        <payload_hash>-1432259455</payload_hash>
+        <record_name>x_2228927_equipm_0.user</record_name>
+        <reverted_from/>
+        <source>3ee54b182fd8d7108d012cba6fa4e3fc</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-29 04:42:21</sys_created_on>
+        <sys_id>36e58b182fd8d7108d012cba6fa4e34d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a185f755920000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-29 04:42:21</sys_updated_on>
+        <type>Role</type>
+        <update_guid>f2e58b1816d8d710d9d166c0d2693d4c</update_guid>
+        <update_guid_history>f2e58b1816d8d710d9d166c0d2693d4c:-1432259455</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_2228927_equipm_0.user">21c56f9c2fdcd7108d012cba6fa4e3df</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-29 07:01:38</sys_created_on>
+        <sys_db_object display_value="" name="sys_user_role">sys_user_role</sys_db_object>
+        <sys_id>1c5527bce06e40e498fd4cfd27f88210</sys_id>
+        <sys_metadata>fae58b182fd8d7108d012cba6fa4e344</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2228927_equipm_0.user</sys_name>
+        <sys_package display_value="Equipment Request Hub" source="x_2228927_equipm_0">fae54b182fd8d7108d012cba6fa4e3f3</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</sys_scope>
+        <sys_scope_delete display_value="">1441fa7a63424dc094b22b2017b9f9c9</sys_scope_delete>
+        <sys_update_name>sys_user_role_fae58b182fd8d7108d012cba6fa4e344</sys_update_name>
+        <sys_update_version display_value="sys_user_role_fae58b182fd8d7108d012cba6fa4e344">36e58b182fd8d7108d012cba6fa4e34d</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-29 07:01:38</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
