@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_2228927_equipm_0.EquipmentRequestUtil</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Business logic for the Equipment Request Hub application</description>
+        <mobile_callable>false</mobile_callable>
+        <name>EquipmentRequestUtil</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var EquipmentRequestUtil = Class.create();
+EquipmentRequestUtil.prototype = {
+	// Request state values (choices on the "state" field of x_2228927_equipm_0_request)
+    STATE: {
+        NEW: '1',
+        PENDING_APPROVAL: '10',
+        APPROVED: '20',
+        IN_FULFILMENT: '30',
+        DELIVERED: '40',
+        REJECTED: '50',
+        CANCELLED: '60'
+    },
+
+    // Approval tier values (choices on "approval_tier")
+    TIER: {
+        AUTO: 'auto',
+        MANAGER: 'manager',
+        MANAGER_FINANCE: 'manager_finance'
+    },
+    initialize: function() {
+		this.managerLimit=parseFloat(gs.getProperty('x_2228927_equipm_0.manager_approval_limit','500'));
+		this.financeLimit=parseFloat(gs.getProperty('x_2228927_equipm_0.finance_approval_limit', '2000'));
+    },
+
+	/**
+     * Returns a plain object (not a GlideRecord) so callers can't accidentally mutate or hold on to a live record.
+     * returns equipment obj or null
+     */
+	getEquipmentInfo:function(sysId){
+		if (!sysId) {
+            return null;
+        }
+		var equipmentRecord=new GlideRecord("x_2228927_equipm_0_equipment");
+		if (!equipmentRecord.get(sysId)) {
+            return null;
+        }
+		return{
+			sys_id:equipmentRecord.getUniqueValue(),
+			name:equipmentRecord.getValue('name'),
+			type:equipmentRecord.getValue("type"),
+			unit_cost: parseFloat(equipmentRecord.getValue('unit_cost')) || 0,
+            stock_qty: parseInt(equipmentRecord.getValue('stock_qty'), 10) || 0,
+            reorder_level: parseInt(equipmentRecord.getValue('reorder_level'), 10) || 0,
+            active: equipmentRecord.active.toString() === 'true'
+		};
+	},
+
+	/**
+     * returns unit_cost * quantity (0 when equipment is unknown)
+     */
+	calculateTotalValue:function(equipmentSysId, quantity){
+		var equipment=getEquipmentInfo(equipmentSysId);
+		var qty=parseInt(quantity,10);
+		if (!equipment || isNaN(qty) || qty < 1) {
+            return 0;
+        }
+		return equipment.unit_cost*qty;
+	},
+	/**
+     * Maps a total cost to the approval tier.
+     */
+    getApprovalTier: function(totalCost) {
+        if (totalCost <= this.managerLimit) {
+            return this.TIER.AUTO;
+        }
+        if (totalCost <= this.financeLimit) {
+            return this.TIER.MANAGER;
+        }
+        return this.TIER.MANAGER_FINANCE;
+    },
+
+	hasStock: function(equipmentSysId, quantity) {
+        var info = this.getEquipmentInfo(equipmentSysId);
+        return !!info && info.stock_qty >= parseInt(quantity, 10);
+    },
+
+	/**
+     * Decrement stock for an approved request. returns true when reserved.
+     */
+    reserveStock: function(equipmentSysId, quantity) {
+        var qty = parseInt(quantity, 10);
+        var equipment = new GlideRecord('x_2228927_equipm_0_equipment');
+        if (!equipment.get(equipmentSysId)) {
+            return false;
+        }
+        var current = parseInt(equipment.getValue('stock_qty'), 10) || 0;
+        if (current < qty) {
+            return false;
+        }
+        equipment.setValue('stock_qty', current - qty);
+        return !!equipment.update();
+    },
+
+	/**
+     * give stock back when an approved request is cancelled/rejected.
+     */
+    releaseStock: function(equipmentSysId, quantity) {
+		var qty=parseInt(quantity,10);
+		var equipment= new GlideRecord('x_2228927_equipm_0_equipment');
+		if(!equipment.get(equipmentSysId)){
+			return false;
+		}
+		var currentStock=parseInt(equipment.getValue('stock_qty'),10);
+		equipment.setValue('stock_qty',currentStock+qty);
+		return !!equipment.update();
+	},
+
+	/**
+     * Is the given user allowed to see/cancel this request as the requester?
+     */
+    isRequester: function(requestGr, userSysId) {
+        return requestGr.getValue('requested_for') === userSysId ||
+            requestGr.getValue('opened_by') === userSysId;
+    },
+
+    type: 'EquipmentRequestUtil'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-29 08:53:02</sys_created_on>
+        <sys_id>d03dbf9c2f901b108d012cba6fa4e33a</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>EquipmentRequestUtil</sys_name>
+        <sys_package display_value="Equipment Request Hub" source="x_2228927_equipm_0">fae54b182fd8d7108d012cba6fa4e3f3</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</sys_scope>
+        <sys_update_name>sys_script_include_d03dbf9c2f901b108d012cba6fa4e33a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-29 11:25:58</sys_updated_on>
+    </sys_script_include>
+</record_update>

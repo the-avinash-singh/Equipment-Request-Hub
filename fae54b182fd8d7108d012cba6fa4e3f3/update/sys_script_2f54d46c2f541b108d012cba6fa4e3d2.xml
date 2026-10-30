@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_2228927_equipm_0_request</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_2228927_equipm_0_request">stateCHANGESTO20^EQ<item display_value="Approved" endquery="false" field="state" goto="false" newquery="false" operator="CHANGESTO" or="false" value="20"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name> Send approved request to procurement </name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+    try {
+        var rm = new sn_ws.RESTMessageV2('Procurement API', 'create_order');
+        rm.setStringParameterNoEscape('request_number', current.getValue('number'));
+        rm.setStringParameterNoEscape('equipment', current.equipment.getDisplayValue());
+        rm.setStringParameterNoEscape('quantity', current.getValue('quantity'));
+        rm.setStringParameterNoEscape('requested_for', current.requested_for.getDisplayValue());
+        rm.setHttpTimeout(10000);   // 10 s: never wait forever
+
+        var response = rm.execute();
+        var status = response.getStatusCode();
+
+        if (status >= 200 && status < 300) {
+            current.work_notes = 'Procurement order created (HTTP ' + status + ').';
+        } else {
+            current.work_notes = 'Procurement call failed (HTTP ' + status + '): ' + response.getBody();
+            gs.error('[x_2228927_equipm_0] Procurement HTTP ' + status + ' for ' + current.getValue('number'));
+        }
+        current.setWorkflow(false);   // don't re-trigger business rules / flows from this bookkeeping update
+        current.update();
+
+    } catch (ex) {
+        // Network error, bad endpoint, etc. Log it; a retry job could pick these up.
+        gs.error('[x_2228927_equipm_0] Procurement call exception: ' + ex.message);
+    }
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-29 10:43:01</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2f54d46c2f541b108d012cba6fa4e3d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name> Send approved request to procurement </sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Equipment Request Hub" source="x_2228927_equipm_0">fae54b182fd8d7108d012cba6fa4e3f3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</sys_scope>
+        <sys_update_name>sys_script_2f54d46c2f541b108d012cba6fa4e3d2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-29 10:43:01</sys_updated_on>
+        <template/>
+        <when>async_always</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=2f54d46c2f541b108d012cba6fa4e3d2"/>
+</record_update>

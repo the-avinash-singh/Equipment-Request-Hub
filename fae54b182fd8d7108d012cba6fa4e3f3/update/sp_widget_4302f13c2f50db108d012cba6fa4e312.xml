@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[/**
+ * Service Portal widget: "My Equipment Requests"  (Client Controller)
+ * AngularJS controller; `c` is the controller instance referenced in the HTML template.
+ */
+api.controller = function($scope, spUtil) {
+    var c = this;
+
+    c.cancel = function(request) {
+        if (!confirm('Cancel request ' + request.number + '?')) {
+            return;
+        }
+        // c.server.get() sends this object as `input` to the server script,
+        // then replaces c.data with the freshly loaded list.
+        c.server.get({
+            action: 'cancel',
+            sys_id: request.sys_id
+        }).then(function() {
+            spUtil.addInfoMessage(c.data.message);
+        });
+    };
+
+    c.stateClass = function(state) {
+        switch (state) {
+            case 'Approved':
+            case 'Delivered':
+                return 'label-success';
+            case 'Pending Approval':
+            case 'In Fulfilment':
+                return 'label-warning';
+            case 'Rejected':
+            case 'Cancelled':
+                return 'label-danger';
+            default:
+                return 'label-default';
+        }
+    };
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>eqreq_my_requests</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>My equipment requests</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[/**
+ * Service Portal widget: "My Equipment Requests"  (Server Script)
+ * Widget ID: eqreq_my_requests
+ *
+ * Runs on the server each time the widget loads or calls c.server.get/update.
+ * `data` is sent to the client controller; `input` is what the client sent in.
+ */
+(function() {
+
+    // ---- Handle actions sent from the client ----
+    if (input && input.action === 'cancel' && input.sys_id) {
+        var target = new GlideRecordSecure('x_2228927_equipm_0_request');   // honours ACLs
+        if (target.get(input.sys_id) &&
+            target.getValue('requested_for') === gs.getUserID() &&
+            target.active.toString() === 'true') {
+            target.setValue('state', '60');   // Cancelled; stock is released by the Business Rule
+            target.work_notes = 'Cancelled from the portal.';
+            target.update();
+            data.message = 'Request ' + target.getValue('number') + ' cancelled.';
+        } else {
+            data.message = 'That request cannot be cancelled.';
+        }
+    }
+
+    // ---- Load the list ----
+    data.requests = [];
+    var gr = new GlideRecordSecure('x_2228927_equipm_0_request');
+    gr.addQuery('requested_for', gs.getUserID());
+    gr.orderByDesc('sys_created_on');
+    gr.setLimit(parseInt(options.limit, 10) || 10);   // instance option, default 10
+    gr.query();
+
+    while (gr.next()) {
+        data.requests.push({
+            sys_id: gr.getUniqueValue(),
+            number: gr.getValue('number'),
+            equipment: gr.equipment.getDisplayValue(),
+            quantity: parseInt(gr.getValue('quantity'), 10),
+            total: gr.total_cost.getDisplayValue(),
+            state: gr.state.getDisplayValue(),
+            active: gr.active.toString() === 'true',
+            created: gr.sys_created_on.getDisplayValue()
+        });
+    }
+
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-30 11:52:52</sys_created_on>
+        <sys_id>4302f13c2f50db108d012cba6fa4e312</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>My equipment requests</sys_name>
+        <sys_package display_value="Equipment Request Hub" source="x_2228927_equipm_0">fae54b182fd8d7108d012cba6fa4e3f3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</sys_scope>
+        <sys_update_name>sp_widget_4302f13c2f50db108d012cba6fa4e312</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-30 12:05:16</sys_updated_on>
+        <template><![CDATA[<!-- Service Portal widget: My Equipment Requests (HTML Template) -->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">${My equipment requests}</h3>
+  </div>
+
+  <div class="panel-body" ng-if="!c.data.requests.length">
+    <p class="text-muted">${You have no equipment requests yet.}</p>
+  </div>
+
+  <table class="table table-hover" ng-if="c.data.requests.length">
+    <thead>
+      <tr>
+        <th>${Number}</th>
+        <th>${Equipment}</th>
+        <th class="text-right">${Qty}</th>
+        <th class="text-right">${Total}</th>
+        <th>${Status}</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="r in c.data.requests track by r.sys_id">
+        <td>{{r.number}}</td>
+        <td>{{r.equipment}}</td>
+        <td class="text-right">{{r.quantity}}</td>
+        <td class="text-right">{{r.total}}</td>
+        <td><span class="label" ng-class="c.stateClass(r.state)">{{r.state}}</span></td>
+        <td class="text-right">
+          <button class="btn btn-default btn-sm" ng-if="r.active" ng-click="c.cancel(r)">
+            ${Cancel}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>4302f13c2f50db108d012cba6fa4e312</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-30 11:52:52</sys_created_on>
+        <sys_id>c302f13c2f50db108d012cba6fa4e319</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-30 11:52:52</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

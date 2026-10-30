@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_2228927_equipm_0.EquipmentRequestAjax</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description>Server script to get the equipment information from client</description>
+        <mobile_callable>false</mobile_callable>
+        <name>EquipmentRequestAjax</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var EquipmentRequestAjax = Class.create();
+EquipmentRequestAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+    getEquipmentInfo: function() {
+        var equipmentId = this.getParameter('sysparm_equipment');
+        var quantity = parseInt(this.getParameter('sysparm_quantity'), 10) || 1;
+
+        var util = new EquipmentRequestUtil();
+        var info = util.getEquipmentInfo(equipmentId);
+
+        if (!info) {
+            return JSON.stringify({ found: false });
+        }
+
+        var total = info.unit_cost * quantity;
+        return JSON.stringify({
+            found: true,
+            name: info.name,
+            active: info.active,
+            unit_cost: info.unit_cost,
+            stock_qty: info.stock_qty,
+            enough_stock: info.stock_qty >= quantity,
+            total_cost: total,
+            approval_tier: util.getApprovalTier(total)
+        });
+    },
+
+    type: 'EquipmentRequestAjax'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-29 09:43:57</sys_created_on>
+        <sys_id>445848642f141b108d012cba6fa4e31c</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>EquipmentRequestAjax</sys_name>
+        <sys_package display_value="Equipment Request Hub" source="x_2228927_equipm_0">fae54b182fd8d7108d012cba6fa4e3f3</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</sys_scope>
+        <sys_update_name>sys_script_include_445848642f141b108d012cba6fa4e31c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-30 09:31:29</sys_updated_on>
+    </sys_script_include>
+</record_update>

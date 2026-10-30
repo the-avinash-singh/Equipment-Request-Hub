@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>to set startup values and disable the business rule controlled fields</description>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Form setup</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+    g_form.setReadOnly('total_cost', true);
+    g_form.setReadOnly('approval_tier', true);
+
+    var isNew = g_form.isNewRecord();
+    if (isNew) {
+        g_form.setValue('quantity', 1);
+        // Default "requested for" to the logged-in user (g_user is available on the client without a server call)
+        if (!g_form.getValue('requested_for')) {
+            g_form.setValue('requested_for', g_user.userID);
+        }
+    }
+
+    // Fulfilment-only fields are hidden from plain requesters
+    if (!g_user.hasRole('x_2228927_equipm_0.fulfiller') && !g_user.hasRole('x_2228927_equipm_0.admin')) {
+        g_form.setDisplay('delivery_date', false);
+        g_form.setDisplay('delivered_on', false);
+    }
+
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-29 11:54:23</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>ec18e4642f181b108d012cba6fa4e326</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Form setup</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Equipment Request Hub" source="x_2228927_equipm_0">fae54b182fd8d7108d012cba6fa4e3f3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</sys_scope>
+        <sys_update_name>sys_script_client_ec18e4642f181b108d012cba6fa4e326</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-29 11:58:49</sys_updated_on>
+        <table>x_2228927_equipm_0_request</table>
+        <type>onLoad</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

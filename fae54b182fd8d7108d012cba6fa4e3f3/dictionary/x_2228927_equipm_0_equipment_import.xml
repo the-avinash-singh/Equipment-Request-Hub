@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="7a4f983c2f949b108d012cba6fa4e3a4" extends="sys_import_set_row" label="Equipment import" max_length="40" name="x_2228927_equipm_0_equipment_import" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=name" label="name" max_length="40" name="u_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=reorder_level" label="reorder_level" max_length="40" name="u_reorder_level" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=sku" label="sku" max_length="40" name="u_sku" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=type" label="type" max_length="40" name="u_type" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=unit_cost" label="unit_cost" max_length="40" name="u_unit_cost" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=stock_qty" label="stock_qty" max_length="40" name="u_stock_qty" type="string"/>
+    </element>
+</database>

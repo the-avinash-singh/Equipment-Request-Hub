@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_transform_script">
+    <sys_transform_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <map display_value="Equhipment transport map ">bd5f5c3c2f949b108d012cba6fa4e368</map>
+        <order>100</order>
+        <script><![CDATA[(function runTransformScript(source, map, log, target /*undefined onStart*/ ) {
+
+	// 1. Reject incomplete rows (skip, don't fail the entire import)
+    if (!source.u_sku || !source.u_name) {
+        log.warn('Row skipped: SKU or name missing (row ' + source.sys_import_row + ')');
+        ignore = true;
+        return;
+    }
+
+    // 2. Clean currency text such as "$1,299.00" -> 1299
+    var rawCost = String(source.u_unit_cost).replace(/[^0-9.]/g, '');
+    var cost = parseFloat(rawCost);
+    if (isNaN(cost)) {
+        log.error('Row skipped: invalid unit cost "' + source.u_unit_cost + '" for SKU ' + source.u_sku);
+        ignore = true;
+        return;
+    }
+    target.unit_cost = cost;
+
+    // 3. Normalise the choice value to match the choice list ("Laptop " -> "laptop")
+    var type = String(source.u_type).trim().toLowerCase();
+    var validTypes = ['laptop', 'monitor', 'phone', 'accessory'];
+    target.type = validTypes.indexOf(type) > -1 ? type : 'accessory';
+
+    // 4. Numbers: default safely
+    target.stock_qty = parseInt(source.u_stock_qty, 10) || 0;
+    target.reorder_level = parseInt(source.u_reorder_level, 10) || 5;
+
+    // 5. Insert-only defaults
+    if (action === 'insert') {
+        target.active = true;
+    }
+
+})(source, map, log, target);]]></script>
+        <sys_class_name>sys_transform_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-30 05:56:13</sys_created_on>
+        <sys_id>73ef10bc2f949b108d012cba6fa4e308</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>onBefore</sys_name>
+        <sys_package display_value="Equipment Request Hub" source="x_2228927_equipm_0">fae54b182fd8d7108d012cba6fa4e3f3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</sys_scope>
+        <sys_update_name>sys_transform_script_73ef10bc2f949b108d012cba6fa4e308</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-30 05:56:13</sys_updated_on>
+        <when>onBefore</when>
+    </sys_transform_script>
+</record_update>

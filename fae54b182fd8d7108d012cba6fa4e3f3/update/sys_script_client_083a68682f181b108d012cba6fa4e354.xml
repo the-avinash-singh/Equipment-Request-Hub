@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>validate the form before submittion</description>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Validate before submit</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+	
+    var total = parseFloat(g_form.getValue('total_cost')) || 0;
+    var justification = (g_form.getValue('justification') || '').trim();
+
+    if (total > 500 && justification.length < 20) {
+        g_form.addErrorMessage('Please explain the business need (at least 20 characters) for requests over 500.');
+        g_form.showFieldMsg('justification', 'Required for requests over 500.', 'error');
+        return false;   // cancels the submit
+    }
+
+    var qty = parseInt(g_form.getValue('quantity'), 10);
+    if (isNaN(qty) || qty < 1 || qty > 10) {
+        g_form.showFieldMsg('quantity', 'Enter a quantity between 1 and 10.', 'error');
+        return false;
+    }
+    return true;
+   
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-29 12:01:58</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>083a68682f181b108d012cba6fa4e354</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Validate before submit</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Equipment Request Hub" source="x_2228927_equipm_0">fae54b182fd8d7108d012cba6fa4e3f3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</sys_scope>
+        <sys_update_name>sys_script_client_083a68682f181b108d012cba6fa4e354</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-29 12:01:58</sys_updated_on>
+        <table>x_2228927_equipm_0_request</table>
+        <type>onSubmit</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

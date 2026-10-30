@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_email_action">
+    <sysevent_email_action action="INSERT_OR_UPDATE">
+        <action_insert>false</action_insert>
+        <action_update>false</action_update>
+        <active>true</active>
+        <advanced_condition/>
+        <affected_field_on_event/>
+        <category display_value="Uncategorized" name="Uncategorized">c97d83137f4432005f58108c3ffa917a</category>
+        <collection>x_2228927_equipm_0_request</collection>
+        <condition/>
+        <content_type>text/html</content_type>
+        <default_digest>false</default_digest>
+        <default_interval/>
+        <description/>
+        <digest_from/>
+        <digest_html/>
+        <digest_reply_to/>
+        <digest_separator_html><![CDATA[<p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>]]></digest_separator_html>
+        <digest_separator_text><![CDATA[\n--------------------------------------------------------------------------------\n]]></digest_separator_text>
+        <digest_subject/>
+        <digest_template/>
+        <digest_text/>
+        <digest_type>single</digest_type>
+        <digestable>false</digestable>
+        <enable_dynamic_translation>false</enable_dynamic_translation>
+        <event_name>x_2228927_equipm_0.request.approved</event_name>
+        <event_parm_1>false</event_parm_1>
+        <event_parm_2>false</event_parm_2>
+        <exclude_delegates>false</exclude_delegates>
+        <force_delivery>false</force_delivery>
+        <from/>
+        <generation_type>event</generation_type>
+        <importance/>
+        <include_attachments>false</include_attachments>
+        <item>event.parm1</item>
+        <item_table/>
+        <mandatory>false</mandatory>
+        <message/>
+        <message_html><![CDATA[<p>&lt;div style="font-family: Arial, Helvetica, sans-serif; max-width: 600px; margin: 0 auto; color: #333333;"&gt;</p>
+<p>&nbsp; &lt;div style="background-color: #1f6f43; color: #ffffff; padding: 16px 24px; border-radius: 6px 6px 0 0;"&gt;<br>&nbsp; &nbsp; &lt;h2 style="margin: 0; font-size: 20px;"&gt;Your request has been approved&lt;/h2&gt;<br>&nbsp; &lt;/div&gt;</p>
+<p>&nbsp; &lt;div style="border: 1px solid #dddddd; border-top: none; padding: 24px; border-radius: 0 0 6px 6px;"&gt;</p>
+<p>&nbsp; &nbsp; &lt;p style="margin-top: 0;"&gt;Hello ${requested_for.first_name},&lt;/p&gt;</p>
+<p>&nbsp; &nbsp; &lt;p&gt;Your equipment request &lt;b&gt;${number}&lt;/b&gt; has been approved.&lt;/p&gt;</p>
+<p>&nbsp; &nbsp; ${mail_script:request_summary}</p>
+<p>&nbsp; &nbsp; &lt;p&gt;We'll let you know when the equipment is on its way.&lt;/p&gt;</p>
+<p>&nbsp; &nbsp; &lt;p style="margin-bottom: 24px;"&gt;<br>&nbsp; &nbsp; &nbsp; &lt;a href="${URI}"<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;style="background-color: #1f6f43; color: #ffffff; padding: 10px 18px; text-decoration: none; border-radius: 4px; display: inline-block;"&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; View request<br>&nbsp; &nbsp; &nbsp; &lt;/a&gt;<br>&nbsp; &nbsp; &lt;/p&gt;</p>
+<p>&nbsp; &nbsp; &lt;p style="font-size: 12px; color: #888888; margin-bottom: 0;"&gt;<br>&nbsp; &nbsp; &nbsp; This is an automated message from the Equipment Request Hub. Please don't reply to this email.<br>&nbsp; &nbsp; &lt;/p&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/div&gt;</p>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>Request approved</name>
+        <omit_watermark>false</omit_watermark>
+        <order>100</order>
+        <push_message_only>false</push_message_only>
+        <recipient_fields>requested_for</recipient_fields>
+        <recipient_groups/>
+        <recipient_users/>
+        <reply_to/>
+        <send_self>true</send_self>
+        <sms_alternate/>
+        <style/>
+        <subject>${number} approved: ${equipment}</subject>
+        <subscribable>false</subscribable>
+        <sys_class_name>sysevent_email_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-30 07:31:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0735b0bc2f589b108d012cba6fa4e331</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Request approved</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Equipment Request Hub" source="x_2228927_equipm_0">fae54b182fd8d7108d012cba6fa4e3f3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</sys_scope>
+        <sys_update_name>sysevent_email_action_0735b0bc2f589b108d012cba6fa4e331</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-30 07:31:20</sys_updated_on>
+        <sys_version>2</sys_version>
+        <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
+        <type>email</type>
+        <weight>0</weight>
+    </sysevent_email_action>
+</record_update>

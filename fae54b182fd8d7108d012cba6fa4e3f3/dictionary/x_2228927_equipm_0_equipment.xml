@@ -7,6 +7,7 @@
             <choice>
                 <element inactive_on_update="false" label="Laptop" sequence="0" value="laptop"/>
                 <element inactive_on_update="false" label="Phone" sequence="2" value="phone"/>
+                <element inactive_on_update="false" label="Monitor" sequence="0" value="Monitor"/>
                 <element inactive_on_update="false" label="Moniter" sequence="1" value="moniter"/>
                 <element inactive_on_update="false" label="Accessory" sequence="3" value="accessory"/>
             </choice>

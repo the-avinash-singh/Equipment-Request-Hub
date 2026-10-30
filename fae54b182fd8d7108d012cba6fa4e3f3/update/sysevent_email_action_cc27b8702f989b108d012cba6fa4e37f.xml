@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_email_action">
+    <sysevent_email_action action="INSERT_OR_UPDATE">
+        <action_insert>false</action_insert>
+        <action_update>false</action_update>
+        <active>true</active>
+        <advanced_condition/>
+        <affected_field_on_event/>
+        <category display_value="Uncategorized" name="Uncategorized">c97d83137f4432005f58108c3ffa917a</category>
+        <collection>x_2228927_equipm_0_request</collection>
+        <condition/>
+        <content_type>text/html</content_type>
+        <default_digest>false</default_digest>
+        <default_interval/>
+        <description/>
+        <digest_from/>
+        <digest_html/>
+        <digest_reply_to/>
+        <digest_separator_html><![CDATA[<p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>]]></digest_separator_html>
+        <digest_separator_text><![CDATA[\n--------------------------------------------------------------------------------\n]]></digest_separator_text>
+        <digest_subject/>
+        <digest_template/>
+        <digest_text/>
+        <digest_type>single</digest_type>
+        <digestable>false</digestable>
+        <enable_dynamic_translation>false</enable_dynamic_translation>
+        <event_name>x_2228927_equipm_0.request.stale</event_name>
+        <event_parm_1>false</event_parm_1>
+        <event_parm_2>false</event_parm_2>
+        <exclude_delegates>false</exclude_delegates>
+        <force_delivery>false</force_delivery>
+        <from/>
+        <generation_type>event</generation_type>
+        <importance/>
+        <include_attachments>false</include_attachments>
+        <item>event.parm1</item>
+        <item_table/>
+        <mandatory>false</mandatory>
+        <message/>
+        <message_html><![CDATA[<p>&lt;div style="font-family: Arial, Helvetica, sans-serif; max-width: 600px; margin: 0 auto; color: #333333;"&gt;</p>
+<p>&nbsp; &lt;div style="background-color: #b26a00; color: #ffffff; padding: 16px 24px; border-radius: 6px 6px 0 0;"&gt;<br>&nbsp; &nbsp; &lt;h2 style="margin: 0; font-size: 20px;"&gt;Approval reminder&lt;/h2&gt;<br>&nbsp; &lt;/div&gt;</p>
+<p>&nbsp; &lt;div style="border: 1px solid #dddddd; border-top: none; padding: 24px; border-radius: 0 0 6px 6px;"&gt;</p>
+<p>&nbsp; &nbsp; &lt;p style="margin-top: 0;"&gt;Hello ${requested_for.manager.first_name},&lt;/p&gt;</p>
+<p>&nbsp; &nbsp; &lt;p&gt;<br>&nbsp; &nbsp; &nbsp; Equipment request &lt;b&gt;${number}&lt;/b&gt; from &lt;b&gt;${requested_for.name}&lt;/b&gt;<br>&nbsp; &nbsp; &nbsp; has been waiting for approval for &lt;b&gt;${event.parm1} days&lt;/b&gt;.<br>&nbsp; &nbsp; &lt;/p&gt;</p>
+<p>&nbsp; &nbsp; ${mail_script:request_summary}</p>
+<p>&nbsp; &nbsp; &lt;p&gt;Please review it and approve or reject it so the requester isn't left waiting.&lt;/p&gt;</p>
+<p>&nbsp; &nbsp; &lt;p style="margin-bottom: 24px;"&gt;<br>&nbsp; &nbsp; &nbsp; &lt;a href="${URI}"<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;style="background-color: #b26a00; color: #ffffff; padding: 10px 18px; text-decoration: none; border-radius: 4px; display: inline-block;"&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; Review request<br>&nbsp; &nbsp; &nbsp; &lt;/a&gt;<br>&nbsp; &nbsp; &lt;/p&gt;</p>
+<p>&nbsp; &nbsp; &lt;p style="font-size: 12px; color: #888888; margin-bottom: 0;"&gt;<br>&nbsp; &nbsp; &nbsp; This is an automated reminder from the Equipment Request Hub. Please don't reply to this email.<br>&nbsp; &nbsp; &lt;/p&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/div&gt;</p>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>Stale approval reminder (to the approver</name>
+        <omit_watermark>false</omit_watermark>
+        <order>100</order>
+        <push_message_only>false</push_message_only>
+        <recipient_fields>requested_for.manager</recipient_fields>
+        <recipient_groups/>
+        <recipient_users/>
+        <reply_to/>
+        <send_self>true</send_self>
+        <sms_alternate/>
+        <style/>
+        <subject>Reminder: ${number} has been waiting ${event.parm1} days</subject>
+        <subscribable>false</subscribable>
+        <sys_class_name>sysevent_email_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-30 07:38:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>cc27b8702f989b108d012cba6fa4e37f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Stale approval reminder (to the approver</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Equipment Request Hub" source="x_2228927_equipm_0">fae54b182fd8d7108d012cba6fa4e3f3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</sys_scope>
+        <sys_update_name>sysevent_email_action_cc27b8702f989b108d012cba6fa4e37f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-30 08:37:27</sys_updated_on>
+        <sys_version>2</sys_version>
+        <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
+        <type>email</type>
+        <weight>0</weight>
+    </sysevent_email_action>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>cc27b8702f989b108d012cba6fa4e37f</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-30 08:37:26</sys_created_on>
+        <sys_id>5855413c2fd89b108d012cba6fa4e3f6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-30 08:37:26</sys_updated_on>
+        <table>sysevent_email_action</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

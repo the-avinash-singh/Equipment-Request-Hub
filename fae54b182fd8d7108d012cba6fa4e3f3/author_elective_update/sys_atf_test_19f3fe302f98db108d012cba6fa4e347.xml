@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_test">
+    <sys_atf_test action="DELETE">
+        <active>true</active>
+        <copied_from/>
+        <description/>
+        <enable_parameterized_testing>false</enable_parameterized_testing>
+        <fail_on_server_error>true</fail_on_server_error>
+        <name>T3 High-cost request needs finance</name>
+        <parameters/>
+        <remember/>
+        <sn_atf_tg_generated>false</sn_atf_tg_generated>
+        <sys_class_name>sys_atf_test</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-30 16:41:00</sys_created_on>
+        <sys_id>19f3fe302f98db108d012cba6fa4e347</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>T3 High-cost request needs finance</sys_name>
+        <sys_package display_value="Equipment Request Hub" source="x_2228927_equipm_0">fae54b182fd8d7108d012cba6fa4e3f3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</sys_scope>
+        <sys_update_name>sys_atf_test_19f3fe302f98db108d012cba6fa4e347</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-30 16:41:00</sys_updated_on>
+        <test_origin>manual</test_origin>
+    </sys_atf_test>
+    <sys_variable_value action="DELETE" query="document_key=19f3fe302f98db108d012cba6fa4e347"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</application>
+        <file_path/>
+        <instance_id>dedc869fff758b5cc80bf8e4fc4fd977</instance_id>
+        <instance_name>dev424214</instance_name>
+        <name>sys_atf_test_19f3fe302f98db108d012cba6fa4e347</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_test"><sys_atf_test action="INSERT_OR_UPDATE"><active>true</active><copied_from/><description/><enable_parameterized_testing>false</enable_parameterized_testing><fail_on_server_error>true</fail_on_server_error><name>T3 High-cost request needs finance</name><parameters/><remember/><sn_atf_tg_generated>false</sn_atf_tg_generated><sys_class_name>sys_atf_test</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-30 16:41:00</sys_created_on><sys_id>19f3fe302f98db108d012cba6fa4e347</sys_id><sys_mod_count>0</sys_mod_count><sys_name>T3 High-cost request needs finance</sys_name><sys_package display_value="Equipment Request Hub" source="x_2228927_equipm_0">fae54b182fd8d7108d012cba6fa4e3f3</sys_package><sys_policy/><sys_scope display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</sys_scope><sys_update_name>sys_atf_test_19f3fe302f98db108d012cba6fa4e347</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-30 16:41:00</sys_updated_on><test_origin>manual</test_origin></sys_atf_test><sys_variable_value action="delete_multiple" query="document_key=19f3fe302f98db108d012cba6fa4e347"/></record_update>]]></payload>
+        <payload_hash>-1886108396</payload_hash>
+        <record_name>T3 High-cost request needs finance</record_name>
+        <reverted_from/>
+        <source>934f33d02fd01b108d012cba6fa4e350</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-30 16:41:00</sys_created_on>
+        <sys_id>fff33ab02f98db108d012cba6fa4e39c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a18dafa2b30000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-30 16:41:00</sys_updated_on>
+        <type>Test</type>
+        <update_guid>bff33ab0f698db104132f1a20f32db9b</update_guid>
+        <update_guid_history>bff33ab0f698db104132f1a20f32db9b:-1886108396</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-30 16:41:14</sys_created_on>
+        <sys_db_object display_value="" name="sys_atf_test">sys_atf_test</sys_db_object>
+        <sys_id>0738f9962c9c44ea84d7b933dc1e0f91</sys_id>
+        <sys_metadata>19f3fe302f98db108d012cba6fa4e347</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>T3 High-cost request needs finance</sys_name>
+        <sys_package display_value="Equipment Request Hub" source="x_2228927_equipm_0">fae54b182fd8d7108d012cba6fa4e3f3</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Equipment Request Hub">fae54b182fd8d7108d012cba6fa4e3f3</sys_scope>
+        <sys_scope_delete display_value="">1441fa7a63424dc094b22b2017b9f9c9</sys_scope_delete>
+        <sys_update_name>sys_atf_test_19f3fe302f98db108d012cba6fa4e347</sys_update_name>
+        <sys_update_version display_value="sys_atf_test_19f3fe302f98db108d012cba6fa4e347">fff33ab02f98db108d012cba6fa4e39c</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-30 16:41:14</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
